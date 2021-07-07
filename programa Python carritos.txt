@@ -1,0 +1,116 @@
+################ Programa carritos flota ########################
+
+import csv
+
+          
+with open('car_fleet.csv') as csvFile:  
+    lector = csv.reader(csvFile, delimiter=',')
+    cuentaLineas = 0
+    for articulo in lector:
+        if cuentaLineas > 0:
+            print(articulo)
+        cuentaLineas = cuentaLineas + 1
+        
+-----------------------------------------------------------
+
+#Tarea: total de millas, para todos los autos cuyo año sea mayor al 2012, es decir, el total debe ser 20 mil 
+
+import csv
+
+          
+with open('car_fleet.csv') as csvFile:  
+    lector = csv.reader(csvFile, delimiter=',')
+    cuentaLineas = 0
+    totalMillas = 0
+    for articulo in lector:
+        if cuentaLineas > 0:
+            if  int(articulo[3])>2012:
+                totalMillas = totalMillas + int(articulo[7])
+            print(articulo[3] + " " + articulo[5])
+        cuentaLineas = cuentaLineas + 1
+        
+print("registros procesados: " + str(cuentaLineas))
+print("Total Millas: " + str(totalMillas))
+
+
+Respuesta:
+
+ 2012  155                                                                                                                                 
+ 2016  140                                                                                                                                 
+ 2012  155                                                                                                                                 
+ 2020  155                                                                                                                                 
+registros procesados: 5 
+Total Millas: 20000 
+
+----------------------------------------------------------
+
+
+#Tarea2: modificar el programa para que muestre las millas y año de un vin en específico (sólo mostrar, no calcular nada)
+
+import csv
+
+          
+with open('car_fleet.csv') as csvFile:  
+    lector = csv.reader(csvFile, delimiter=',')
+    cuentaLineas = 0
+    mivin = "TMX20122"
+    for articulo in lector:
+        if cuentaLineas > 0:
+            if  str(articulo[0]) == mivin:
+                print(articulo[0] + " " + articulo[3] + " " + articulo[7])
+        cuentaLineas = cuentaLineas + 1
+
+Respuesta:
+
+TMX20122  2012  50000    
+
+----------------------------------------------------------------
+
+#nombre países [10] con más de 100 millones [11] habitantes
+
+import csv
+
+with open ('Table.csv') as csvFile:
+    lector = csv.reader (csvFile, delimiter=',')
+    cuentaLineas = 0
+    for fila in lector:
+        if cuentaLineas > 0:
+            if fila[11] == "":
+                fila[11]=0
+            if int(fila[11]) > 100000000:
+                print(fila[10] + " " + fila[11])    
+        cuentaLineas = cuentaLineas + 1  
+
+-------------------------------------------------------------------
+
+#Modificar la instrucción "if" para que este programa tenga sentido. Solo modificar la linea del if.
+saldo= 150
+print ("Saldo = ", saldo)
+montoTransferencia= input("Monto de la transferencia = ")
+if (saldo > int(montoTransferencia)):
+  print("Transferencia realizada")
+else:
+  print("Fondos insuficientes")
+
+------------------------------------------------------------------
+
+#asignar a la variable "impuesto" el 2% de "montoTransferencia"
+montoTransferencia=input("Monto Transferencia = ")
+impuesto=int(montoTransferencia)*0.02
+print("La transferencia {} tiene un impuesto de: {}".format(montoTransferencia, impuesto))
+
+-----------------------------------------------------------------
+
+#terminar programa para que calcule el promedio de la lista "numeros"
+numeros=[34,5,6,767,879,9]
+suma=0
+for n in numeros:
+    suma=suma+int(n)
+promedio=suma/len(numeros)
+print(promedio)
+
+------------------------------------------------------
+
+
+
+
